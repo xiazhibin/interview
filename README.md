@@ -26,6 +26,20 @@
 详细可以看这个问题 http://taizilongxu.gitbooks.io/stackoverflow-about-python/content/1/README.html
 
 ## 2 自己生成一个xrange
-用yield啊
+用yield
 ```python
+def my_xrange(start, stop=None, step=None):
+    now = 0
+    if stop:
+        now = start
+    else:
+        stop = start
+    step = step if step else 1
+
+    op = ge if step > 0 else le
+    while True:
+        if op(now, stop):
+            raise StopIteration
+        yield now
+        now += step
 ```
