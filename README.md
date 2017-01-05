@@ -1,12 +1,9 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
 - [Python语言特性](#python语言特性)
-      - [1 生成器和迭代器](#1-生成器和迭代器)
-      
+      - [1 生成器和迭代器](#1-生成器和迭代器)   
       - [2 自己实现一个xrange](#2-自己生成一个xrange)
-      
       - [3 实现一个callback dict](#3-实现一个callback dict)
-      
       - [4 LEGB 变量搜索](#4-LEGB 变量搜索)
       
 <!-- markdown-toc end -->
@@ -48,11 +45,11 @@ def my_xrange(start, stop=None, step=None):
         now += step
 ```
 
-## 3 实现一个callback dict
+## 3 实现一个callbackdict
 ```python
 ```
 
-## 4 LEGB 变量搜索
+## 4 LEGB变量搜索
 ```python
 count = 10
 def outer():
