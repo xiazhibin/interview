@@ -4,9 +4,10 @@
       - [1 生成器和迭代器](#1-生成器和迭代器)
       - [2 自己实现一个xrange](#2-自己生成一个xrange)
       - [3 LEGB 变量搜索](#3-legb)
-      - [4 python unicode&str](#4-python-unicode&str)
+      - [4 python unicode&str](#4-python-unicodestr)
 
 - [http](#http)
+      - [1 get和post的区别](#1-get和post的区别)
 <!-- markdown-toc end -->
 
 
@@ -64,3 +65,6 @@ def outer():
 ## 4 python unicode&str
 
 python的str就是字节数组，unicode才是我们认为的字符。str.decode('utf-8')变成字符，unicode.encode('gbk')就变成一个字节数组就是str。所以如果字符就应该使用unicode，如果读入一个文本文件，应该指定解码格式，不然读进来的是str，而不是unicode。所以我们操作的str之前要先decode一下
+
+# HTTP
+## 1 get和post的区别
