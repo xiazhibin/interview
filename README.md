@@ -5,6 +5,10 @@
       
       - [2 自己实现一个xrange](#2-自己生成一个xrange)
       
+      - [3 实现一个callback dict]（#3-实现一个callback dict）
+      
+      - [4 LEGB 变量搜索](#4-LEGB 变量搜索)
+      
 <!-- markdown-toc end -->
 
 
@@ -42,4 +46,23 @@ def my_xrange(start, stop=None, step=None):
             raise StopIteration
         yield now
         now += step
+```
+
+## 3 实现一个callback dict
+```python
+```
+
+## 4 LEGB 变量搜索
+```python
+count = 10
+def outer():
+    count = 100
+    print(count)
+outer()
+
+count = 10
+def outer():
+    print(count) #这个报错 UnboundLocalError: local variable 'count' referenced before assignment
+    count = 100
+    print(count)
 ```
