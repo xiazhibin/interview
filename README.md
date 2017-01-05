@@ -49,6 +49,14 @@ def my_xrange(start, stop=None, step=None):
 
 ## 3 实现一个callbackdict
 ```python
+class MyDict(dict):
+    def __init__(self, initial=None, callback=None):
+        super(MyDict, self).__init__(initial or ())
+        self.callback = callback
+
+    def __getitem__(self, item):
+        self.callback()
+        return super(MyDict, self).__getitem__(item)
 ```
 
 ## 4 LEGB
