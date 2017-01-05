@@ -3,9 +3,8 @@
 - [Python语言特性](#python语言特性)
       - [1 生成器和迭代器](#1-生成器和迭代器)
       - [2 自己实现一个xrange](#2-自己生成一个xrange)
-      - [3 实现一个callback dict](#3-实现一个callbackdict)
-      - [4 LEGB 变量搜索](#4-legb)
-      - [5 python unicode&str](#5-python unicode&str)
+      - [3 LEGB 变量搜索](#3-legb)
+      - [4 python unicode&str](#4-python-unicode&str)
 
 - [http](#http)
 <!-- markdown-toc end -->
@@ -47,19 +46,8 @@ def my_xrange(start, stop=None, step=None):
         now += step
 ```
 
-## 3 实现一个callbackdict
-```python
-class MyDict(dict):
-    def __init__(self, initial=None, callback=None):
-        super(MyDict, self).__init__(initial or ())
-        self.callback = callback
 
-    def __getitem__(self, item):
-        self.callback()
-        return super(MyDict, self).__getitem__(item)
-```
-
-## 4 LEGB
+## 3 LEGB
 ```python
 count = 10
 def outer():
@@ -73,4 +61,5 @@ def outer():
     count = 100
     print(count)
 ```
-## 5 python unicode&str
+## 4 python unicode&str
+python的str就是字节数组，unicode才是我们认为的字符。str.decode('utf-8')变成字符，unicode.encode('gbk')就变成一个字节数组就是str。所以如果字符就应该使用unicode，如果读入一个文本文件，应该指定解码格式，不然读进来的是str，而不是unicode。所以我们操作的str之前要先decode一下
