@@ -9,7 +9,7 @@
 - [http](#http)
       - [1 GET和POST的区别](#1-get和post的区别)
       - [2 HttpOnly是什么](#2-httponly是什么)
-      - [3 Connection: Keep-Alive](#3-Connection: Keep-Alive)
+      - [3 Connection: Keep-Alive](#3-connection-keep-alive)
       - [4 http是如何判断一条请求已经结束](#4-http是如何判断一条请求已经结束)
       - [5 301和302区别](#5-301和302区别)
       
