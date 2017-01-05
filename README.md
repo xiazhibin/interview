@@ -5,7 +5,7 @@
       
       - [2 自己实现一个xrange](#2-自己生成一个xrange)
       
-      - [3 实现一个callback dict]（#3-实现一个callback dict）
+      - [3 实现一个callback dict](#3-实现一个callback dict)
       
       - [4 LEGB 变量搜索](#4-LEGB 变量搜索)
       
