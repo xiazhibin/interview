@@ -4,7 +4,7 @@
       - [1 生成器和迭代器](#1-生成器和迭代器)
       - [2 自己实现一个xrange](#2-自己生成一个xrange)
       - [3 实现一个callback dict](#3-实现一个callbackdict)
-      - [4 LEGB 变量搜索](#4 LEGB)
+      - [4 LEGB 变量搜索](#4-legb)
       - [5 python unicode&str](#5-python unicode&str)
 
 - [http](#http)
