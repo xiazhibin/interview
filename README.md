@@ -12,8 +12,13 @@
       - [3 Connection: Keep-Alive](#3-Connection: Keep-Alive)
       - [4 http是如何判断一条请求已经结束](#4-http是如何判断一条请求已经结束)
       - [5 301和302区别](#5-301和302区别)
+      
 - [nginx](#nginx)
       - [1 root和alias区别](#1-root和alias区别)
+      
+- [算法](#算法)
+- [综合](#综合)
+      - [1 短网址](#1-短网址)
 <!-- markdown-toc end -->
 
 
@@ -90,7 +95,7 @@ HttpOnly是cookie里面的一个属性，它是用来防止XSS（Cross Site Scri
 301永久重定向 302临时重定向
 
 # nginx
-## root和alias区别
+## 1 root和alias区别
 ```python
 location /img/ {
     alias /var/www/image/;
