@@ -169,3 +169,5 @@ root则是最上层目录的定义
 
 # flask
 ## 1 flask一次请求过程
+[v0.1](http://blog.csdn.net/bin381/article/details/57086114)
+
