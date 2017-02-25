@@ -5,7 +5,7 @@
       - [2 自己实现一个xrange](#2-自己生成一个xrange)
       - [3 LEGB 变量搜索](#3-legb)
       - [4 python unicode&str](#4-python-unicodestr)
-      - [5 python 如何寻找属性](#5-python-attribute)
+      - [5 python 如何寻找属性](#5-python-attribute)
 
 - [http](#http)
       - [1 GET和POST的区别](#1-get和post的区别)
