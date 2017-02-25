@@ -78,8 +78,19 @@ def outer():
 
 python的str就是字节数组，unicode才是我们认为的字符。str.decode('utf-8')变成字符，unicode.encode('gbk')就变成一个字节数组就是str。所以如果字符就应该使用unicode，如果读入一个文本文件，应该指定解码格式，不然读进来的是str，而不是unicode。所以我们操作的str之前要先decode一下
 
-## 5 python-attribute
-python如何搜索一个属性
+## 5 python attribute 
+针对新式类 python如何访问一个类实例的属性。例如 a.attr 
+首先调用`__getattribute__`方法，如果raise`AttributeError`，还会继续调用`__getattr__`
+
+--
+
+if: 在A类或其基类的__dict__出现，且为data descriptor, 调用其`__get__`方法
+elif: 出现A类或其基类的__dict__中，且为普通属性，返回`obj.__dict__['attr']`
+else: 出现A类或其基类的__dict__中，且为no-data descriptor,调用其`__get__`方法
+end
+
+[官方文档](https://docs.python.org/3/howto/descriptor.html)
+[参考博文](http://www.cnblogs.com/xybaby/p/6270551.html)
 
 # HTTP
 ## 1 Get和Post的区别
