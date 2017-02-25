@@ -17,6 +17,9 @@
       
 - [nginx](#nginx)
       - [1 root和alias区别](#1-root和alias区别)
+  
+- [flask](#flask)
+      - [1 flask一次请求过程](#1-flask一次请求过程)
       
 - [算法](#算法)
 - [综合](#综合)
@@ -101,6 +104,34 @@ end
 
 ## 6 cache property
 ```
+class MyNone(object):
+    def __str__(self):
+        return 'no value'
+
+    def __repr__(self):
+        return 'none'
+
+
+_my_none = MyNone()
+
+
+class cache_property(property):
+    def __init__(self, func):
+        self.__name__ = func.__name__
+        self.func = func
+
+    def __get__(self, instance, type2):
+        if instance is None:
+            return self
+        value = instance.__dict__.get(self.__name__, _my_none)
+        if value is _my_none:
+            value = self.func(instance)
+            instance.__dict__[self.__name__] = value
+        return value
+
+    def __set__(self, instance, value):
+        instance.__dict__[self.__name__] = value
+        
 ```
 
 # HTTP
@@ -135,3 +166,6 @@ location /img/ {
 ```
 alias是一个目录别名的定义
 root则是最上层目录的定义
+
+# flask
+## 1 flask一次请求过程
