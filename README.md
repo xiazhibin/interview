@@ -174,9 +174,13 @@ root则是最上层目录的定义
 [v0.1](http://blog.csdn.net/bin381/article/details/57086114)
 
 ## 2 flask request,g实现原理
+
 关键字
-`LocalProxy`, `_lookup_req_object`, `top = _request_ctx_stack.top`
+
+`LocalProxy`,`_lookup_req_object`, `top = _request_ctx_stack.top`
+
 `__storage__为内部保存的自己，键就是thread.get_ident，也就是根据线程的标示符返回对应的值`
+
 `ctx.push操作将ctx push到_request_ctx_stack，所以当我们调用request.method时将调用_lookup_req_object。top此时就是ctx上下文对象，而getattr(top, "request")将返回ctx的request，而这个request就是在ctx的__init__中根据环境变量创建的。
 每一次调用视图函数操作之前，flask会把创建好的ctx放在线程Local中，当使用时根据线程id就可以拿到了。在wsgi_app的finally中会调用ctx.auto_pop(error),会根据情况判断是否清除放_request_ctx_stack中的ctx。`
 
