@@ -20,7 +20,9 @@
   
 - [flask](#flask)
       - [1 flask一次请求过程](#1-flask一次请求过程)
-      
+      - [2 flask request,g实现原理](2-flask-request,g实现原理)
+
+      
 - [算法](#算法)
 - [综合](#综合)
       - [1 短网址](#1-短网址)
@@ -171,3 +173,5 @@ root则是最上层目录的定义
 ## 1 flask一次请求过程
 [v0.1](http://blog.csdn.net/bin381/article/details/57086114)
 
+## 2 flask request,g实现原理
+[参考博客](http://blog.csdn.net/yueguanghaidao/article/details/39533841)
