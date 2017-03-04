@@ -21,6 +21,9 @@
 - [flask](#flask)
       - [1 flask一次请求过程](#1-flask一次请求过程)
       - [2 flask request,g实现原理](#2-flask-requestg实现原理)
+      
+- [网络](#网络)
+      - [1 select epoll](#1 简单解释select epoll)
 
       
 - [算法](#算法)
@@ -185,3 +188,8 @@ root则是最上层目录的定义
 每一次调用视图函数操作之前，flask会把创建好的ctx放在线程Local中，当使用时根据线程id就可以拿到了。在wsgi_app的finally中会调用ctx.auto_pop(error),会根据情况判断是否清除放_request_ctx_stack中的ctx。`
 
 [参考博客](http://blog.csdn.net/yueguanghaidao/article/details/39533841)
+
+
+# 网络
+## 1 简单解释select epollselect
+- select 是通过系统调用来监视着一个由多个文件描述符（file descriptor）组成的数组，当select()返回后，数组中就绪的文件描述符会被内核修改标记位(其实就是一个整数)，使得进程可以获得这些文件描述符从而进行后续的读写操作。select饰通过遍历来监视整个数组的，而且每次遍历都是线性的
