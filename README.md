@@ -23,7 +23,7 @@
       - [2 flask request,g实现原理](#2-flask-requestg实现原理)
       
 - [网络](#网络)
-      - [1 select epoll](#1-简单解释select和epoll)
+      - [1 简单解释select和epoll](#1-简单解释select和epoll)
 
       
 - [算法](#算法)
