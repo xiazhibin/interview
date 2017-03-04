@@ -23,7 +23,7 @@
       - [2 flask request,g实现原理](#2-flask-requestg实现原理)
       
 - [网络](#网络)
-      - [1 select epoll](#1 简单解释select epoll)
+      - [1 select epoll](#1-简单解释select和epoll)
 
       
 - [算法](#算法)
@@ -191,5 +191,5 @@ root则是最上层目录的定义
 
 
 # 网络
-## 1 简单解释select epollselect
-- select 是通过系统调用来监视着一个由多个文件描述符（file descriptor）组成的数组，当select()返回后，数组中就绪的文件描述符会被内核修改标记位(其实就是一个整数)，使得进程可以获得这些文件描述符从而进行后续的读写操作。select饰通过遍历来监视整个数组的，而且每次遍历都是线性的
+## 1 简单解释select和epollselect
+- select是通过系统调用来监视着一个由多个文件描述符（file descriptor）组成的数组，当select()返回后，数组中就绪的文件描述符会被内核修改标记位(其实就是一个整数)，使得进程可以获得这些文件描述符从而进行后续的读写操作。select饰通过遍历来监视整个数组的，而且每次遍历都是线性的
