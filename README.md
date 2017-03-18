@@ -1,40 +1,37 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-generate-toc again -->
 **Table of Contents**
 - [Python语言特性](#python语言特性)
-
-      - [1 生成器和迭代器](#1-生成器和迭代器)
-      - [2 自己实现一个xrange](#2-自己生成一个xrange)
-      - [3 LEGB 变量搜索](#3-legb)
-      - [4 python unicode&str](#4-python-unicodestr)
-      - [5 python 如何寻找属性](#5-python-attribute)
-      - [6 cache property](#6-cache-property)
+  - [1 生成器和迭代器](#1-生成器和迭代器)
+  - [2 自己实现一个xrange](#2-自己生成一个xrange)
+  - [3 LEGB 变量搜索](#3-legb)
+  - [4 python unicode&str](#4-python-unicodestr)
+  - [5 python 如何寻找属性](#5-python-attribute)
+  - [6 cache property](#6-cache-property)
 
 - [http](#http)
-
-      - [1 GET和POST的区别](#1-get和post的区别)
-      - [2 HttpOnly是什么](#2-httponly是什么)
-      - [3 Connection: Keep-Alive](#3-connection-keep-alive)
-      - [4 http是如何判断一条请求已经结束](#4-http是如何判断一条请求已经结束)
-      - [5 301和302区别](#5-301和302区别)
+  - [1 GET和POST的区别](#1-get和post的区别)
+  - [2 HttpOnly是什么](#2-httponly是什么)
+  - [3 Connection: Keep-Alive](#3-connection-keep-alive)
+  - [4 http是如何判断一条请求已经结束](#4-http是如何判断一条请求已经结束)
+  - [5 301和302区别](#5-301和302区别)
       
 - [nginx](#nginx)
-
-      - [1 root和alias区别](#1-root和alias区别)
+  - [1 root和alias区别](#1-root和alias区别)
   
 - [flask](#flask)
-
-      - [1 flask一次请求过程](#1-flask一次请求过程)
-      - [2 flask request,g实现原理](#2-flask-requestg实现原理)
+  - [1 flask一次请求过程](#1-flask一次请求过程)
+  - [2 flask request,g实现原理](#2-flask-requestg实现原理)
+  - [3 flask sessionmiddleware实现](#3-flask-sessionmiddleware实现)
       
 - [网络](#网络)
-      - [1 水平触发和边缘触发](#1-水平触发和边缘触发)
-      - [2 简单解释select和epoll](#2-简单解释select和epoll)
+  - [1 水平触发和边缘触发](#1-水平触发和边缘触发)
+  - [2 简单解释select和epoll](#2-简单解释select和epoll)
 
       
 - [算法](#算法)
 
 - [综合](#综合)
-      - [1 短网址](#1-短网址)
+  - [1 短网址](#1-短网址)
 <!-- markdown-toc end -->
 
 
@@ -190,6 +187,8 @@ root则是最上层目录的定义
 
 [参考博客](http://blog.csdn.net/yueguanghaidao/article/details/39533841)
 
+## 3 flask sessionmiddleware实现
+pass
 
 # 网络
 ## 1 水平触发和边缘触发
