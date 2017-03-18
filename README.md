@@ -22,6 +22,7 @@
   - [1 flask一次请求过程](#1-flask一次请求过程)
   - [2 flask request,g实现原理](#2-flask-requestg实现原理)
   - [3 flask sessionmiddleware实现](#3-flask-sessionmiddleware实现)
+  - [4 django 一次处理请求过程](#4-flask-一次处理请求过程)
       
 - [网络](#网络)
   - [1 水平触发和边缘触发](#1-水平触发和边缘触发)
@@ -190,6 +191,21 @@ root则是最上层目录的定义
 ## 3 flask sessionmiddleware实现
 pass
 
+## 4 django 一次处理请求过程
+WSGIHandler
+  - BaseServer->serve_forever()->select.select->self.RequestHandlerClass(request, client_address, self)
+  - 如果没有middleware为空，load middleware（每个middleware可能会有，`process_request, process_view,process_template_response等`）
+  - 初始化WSGIRequest
+  - urlresolvers
+  - for 一次所有response = _request_middleware(request)
+  - 看url match不
+  - for 一次所有的response ＝ _view_middleware(request)
+  - view_func(request) 视图处理函数
+  - for一次response ＝ _template_response_middleware(request)
+  - urlresolvers.set_urlconf(None)
+  - for一次response ＝ _response_middleware(request)
+  - return response
+  
 # 网络
 ## 1 水平触发和边缘触发
 - 水平触发 只要满足条件就会不断触发该事件
