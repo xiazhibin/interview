@@ -22,7 +22,7 @@
   - [1 flask一次请求过程](#1-flask一次请求过程)
   - [2 flask request,g实现原理](#2-flask-requestg实现原理)
   - [3 flask sessionmiddleware实现](#3-flask-sessionmiddleware实现)
-  - [4 django 一次处理请求过程](#4-flask-一次处理请求过程)
+  - [4 django 一次处理请求过程](#4-django-一次处理请求过程)
       
 - [网络](#网络)
   - [1 水平触发和边缘触发](#1-水平触发和边缘触发)
@@ -189,7 +189,7 @@ root则是最上层目录的定义
 [参考博客](http://blog.csdn.net/yueguanghaidao/article/details/39533841)
 
 ## 3 flask sessionmiddleware实现
-pass
+继承SessionInterface， 实现`open_session,save_session`方法
 
 ## 4 django 一次处理请求过程
 WSGIHandler
