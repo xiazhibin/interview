@@ -22,17 +22,20 @@
   - [1 flask一次请求过程](#1-flask一次请求过程)
   - [2 flask request,g实现原理](#2-flask-requestg实现原理)
   - [3 flask sessionmiddleware实现](#3-flask-sessionmiddleware实现)
-  - [4 django 一次处理请求过程](#4-django-一次处理请求过程)
+  - [4 django 一次处理请求过程](#4-django-一次处理请求过程)
       
 - [网络](#网络)
   - [1 水平触发和边缘触发](#1-水平触发和边缘触发)
   - [2 简单解释select和epoll](#2-简单解释select和epoll)
 
-      
+- [redis](#redis)
+  - [1 限制ip访问次数](#1-限制ip访问次数)
+  
 - [算法](#算法)
 
 - [综合](#综合)
   - [1 短网址](#1-短网址)
+  
 <!-- markdown-toc end -->
 
 
@@ -226,3 +229,6 @@ WSGIHandler
  - epoll的解决方法不像select和poll每次对所有fd进行遍历轮询所有fd集合，而是在注册新的事件时，为每个fd指定一个回调函数，当设备就绪的时候，调用这个回调函数，这个回调函数就会把就绪的fd加入一个就绪表中。（所以epoll实际只需要遍历就绪表）。
 - [实例代码](https://gist.github.com/xiazhibin/e564c6eab9f727bb5b95e71f8a66fa9a)
 
+# redis
+## 1 限制ip访问次数用
+一个list保存访问的时间，例如10个，当超过10的时候，拿出第一个跟现在时间对比，大于60，return。小于60，push，删掉前9个
