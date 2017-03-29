@@ -230,5 +230,5 @@ WSGIHandler
 - [实例代码](https://gist.github.com/xiazhibin/e564c6eab9f727bb5b95e71f8a66fa9a)
 
 # redis
-## 1 限制ip访问次数用
-一个list保存访问的时间，例如10个，当超过10的时候，拿出第一个跟现在时间对比，大于60，return。小于60，push，删掉前9个
+## 1 限制ip访问次数
+用一个list保存访问的时间，例如10个，当超过10的时候，拿出第一个跟现在时间对比，大于60，return。小于60，push，删掉前9个
