@@ -237,3 +237,34 @@ WSGIHandler
 
 # 算法
 ## 1 remove list
+题目：在一个数组里面移除指定的value,并返回新的数组的长度,例如[1,23,4,None,None,3,45]删掉None ，返回5
+- 方法一：
+```python
+def remove_element(array):
+    for i in xrange(len(array) - 1, 0, -1):
+        if array[i] is None:
+            del array[i]
+    return len(array)
+```
+- 方法二：
+```python
+def remove_element(array):
+    j = 0
+    for i in range(len(array)):
+        if array[i] is not None: #符合条件的元素就往上移动
+            array[j] = array[i]
+            j += 1
+    del array[j:]
+    return len(array)
+```
+- 方法三:
+```python
+def filter_in_place(array, filter_):
+    j = 0
+    for i in range(0, len(array)):
+        if filter_(array[i]):
+            array[j] = array[i]
+            j += 1
+    del array[j:]
+    return len(array)
+```
