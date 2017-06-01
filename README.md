@@ -8,6 +8,7 @@
   - [5 python 如何寻找属性](#5-python-attribute)
   - [6 cache property](#6-cache-property)
   - [7 buid list of list](#7-build-list-of-list)
+  - [8 init set](#8-init-set)
 
 - [http](#http)
   - [1 GET和POST的区别](#1-get和post的区别)
@@ -160,6 +161,12 @@ class cache_property(property):
  for _ in range(3):
     board.append(['_']*3)
  ```
+
+## 8 init-set
+说说set([1])和{1}都是初始化一个set，哪个比较好，为什么？
+{1} ``` LOAD_CONST BUILD_SET RETURN_VALUE```
+set([1]) ```LOAD_NAME LOAD_CONST BUILD_LIST CALL_FUNCTION RETURN_VALUE ```
+
 
 # HTTP
 ## 1 Get和Post的区别
