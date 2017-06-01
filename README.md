@@ -144,8 +144,16 @@ class cache_property(property):
         
 ```
 
-## build-list-of-list
- - `[['_']*3]*3`
+## 7 build-list-of-list
+ - `[['_']*3]*3` the same as 
+ 
+ ``` 
+ row = ['_']*3 
+ board = [] 
+ for _ in range(3):
+    board.append(row)
+ ```
+ 
  - `[['_']*3 for _ in range(3)]`
 
 # HTTP
