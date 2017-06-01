@@ -163,8 +163,11 @@ class cache_property(property):
  ```
 
 ## 8 init-set
+
 说说set([1])和{1}都是初始化一个set，哪个比较好，为什么？
+
 {1} ``` LOAD_CONST BUILD_SET RETURN_VALUE```
+
 set([1]) ```LOAD_NAME LOAD_CONST BUILD_LIST CALL_FUNCTION RETURN_VALUE ```
 
 
