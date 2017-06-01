@@ -7,6 +7,7 @@
   - [4 python unicode&str](#4-python-unicodestr)
   - [5 python 如何寻找属性](#5-python-attribute)
   - [6 cache property](#6-cache-property)
+  - [7 buid list of list](#7-build-list-of-list)
 
 - [http](#http)
   - [1 GET和POST的区别](#1-get和post的区别)
@@ -142,6 +143,10 @@ class cache_property(property):
         instance.__dict__[self.__name__] = value
         
 ```
+
+## build-list-of-list
+ - `[['_']*3]*3`
+ - `[['_']*3 for _ in range(3)]`
 
 # HTTP
 ## 1 Get和Post的区别
