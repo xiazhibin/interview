@@ -154,7 +154,12 @@ class cache_property(property):
     board.append(row)
  ```
  
- - `[['_']*3 for _ in range(3)]`
+ - `[['_']*3 for _ in range(3)]` the same as  
+ ``` 
+ board = [] 
+ for _ in range(3):
+    board.append(['_']*3)
+ ```
 
 # HTTP
 ## 1 Get和Post的区别
