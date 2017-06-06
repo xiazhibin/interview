@@ -9,7 +9,7 @@
   - [6 cache property](#6-cache-property)
   - [7 buid list of list](#7-build-list-of-list)
   - [8 init set](#8-init-set)
-  - [9 简单说说类的创建过程](#9-简单说说类的创建过程)
+  - [9 简单说说类的创建过程](#9-简单说说类的创建过程)
 
 - [http](#http)
   - [1 GET和POST的区别](#1-get和post的区别)
@@ -173,9 +173,10 @@ set([1]) ```LOAD_NAME LOAD_CONST BUILD_LIST CALL_FUNCTION RETURN_VALUE ```
 
 
 ## 9 简单说说类的创建过程
-``` class A():
-        pass
-    a = A()
+``` 
+class A():
+    pass
+a = A()
 ```
 对象的创建只是调用可调用对象的一种特例 因为A是type对象的一个实例, 所以调用了type的__call__方法，调用object的__new__方法，返回一个A的实例
 继续调用object的__init__方法
