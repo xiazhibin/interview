@@ -10,6 +10,8 @@
   - [7 buid list of list](#7-build-list-of-list)
   - [8 init set](#8-init-set)
   - [9 简单说说类的创建过程](#9-简单说说类的创建过程)
+  - [10 简单说说这个段代码(文件写入)](#10-简单说说这个段代码)
+
 
 - [http](#http)
   - [1 GET和POST的区别](#1-get和post的区别)
@@ -180,6 +182,15 @@ a = A()
 ```
 对象的创建只是调用可调用对象的一种特例 因为A是type对象的一个实例, 所以调用了type的__call__方法，调用object的__new__方法，返回一个A的实例
 继续调用object的__init__方法
+
+## 10 简单说说这个段代码
+``` python
+with open('a.txt', 'wb+') as f:
+    f.write('nihao')
+```
+open方法有个buffering参数， 默认为-1，使用系统的buffersize，充满了就自动flush到文件
+write方法,Write a string to the file. There is no return value. Due to buffering, the string may not actually show up in the file until the flush() or close() method is called.
+[what exactly the python's file.flush() is doing?](https://stackoverflow.com/questions/7127075/what-exactly-the-pythons-file-flush-is-doing)
 
 
 # HTTP
