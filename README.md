@@ -189,7 +189,9 @@ with open('a.txt', 'wb+') as f:
     f.write('nihao')
 ```
 open方法有个buffering参数， 默认为-1，使用系统的buffersize，充满了就自动flush到文件
+
 write方法,Write a string to the file. There is no return value. Due to buffering, the string may not actually show up in the file until the flush() or close() method is called.
+
 [what exactly the python's file.flush() is doing?](https://stackoverflow.com/questions/7127075/what-exactly-the-pythons-file-flush-is-doing)
 
 
