@@ -11,6 +11,7 @@
   - [8 init set](#8-init-set)
   - [9 简单说说类的创建过程](#9-简单说说类的创建过程)
   - [10 简单说说这个段代码(文件写入)](#10-简单说说这个段代码)
+  - [11 简单说说这段代码（decorator）](#11-简单说说这段代码)
 
 
 - [http](#http)
@@ -193,6 +194,22 @@ open方法有个buffering参数， 默认为-1，使用系统的buffersize，充
 write方法,Write a string to the file. There is no return value. Due to buffering, the string may not actually show up in the file until the flush() or close() method is called.
 
 [what exactly the python's file.flush() is doing?](https://stackoverflow.com/questions/7127075/what-exactly-the-pythons-file-flush-is-doing)
+
+## 11 简单说说这段代码
+``` python
+def A(func):
+    return func
+
+@A
+def B():
+    pass
+
+if __name__ == '__main__':
+    B()
+```
+
+ - `__name__`
+ - decorator在被import的时候就会执行，而且只会执行一次
 
 
 # HTTP
