@@ -11,7 +11,7 @@
   - [8 init set](#8-init-set)
   - [9 简单说说类的创建过程](#9-简单说说类的创建过程)
   - [10 简单说说这个段代码(文件写入)](#10-简单说说这个段代码)
-  - [11 简单说说这段代码（decorator）](#11-简单说说这段代码)
+  - [11 简单说说这段代码（decorator）](#11-简单说说这段代码)
 
 
 - [http](#http)
@@ -197,6 +197,7 @@ write方法,Write a string to the file. There is no return value. Due to bufferi
 
 ## 11 简单说说这段代码
 ``` python
+# test.py
 def A(func):
     return func
 
@@ -206,10 +207,12 @@ def B():
 
 if __name__ == '__main__':
     B()
+    
+python test.py
 ```
 
- - `__name__`
- - decorator在被import的时候就会执行，而且只会执行一次
+ - `__name__` is a built-in variable which evaluate to the name of the current module。However, if a module is being run directly then `__name__` instead is set to the string "__main__"
+ - decorator在被import的时候就会执行，而且只会执行一次，因为上述等价于 B = A(B)
 
 
 # HTTP
