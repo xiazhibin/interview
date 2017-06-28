@@ -213,7 +213,7 @@ python test.py
 ```
 
  - `__name__` is a built-in variable which evaluate to the name of the current module。However, if a module is being run directly then `__name__` instead is set to the string "__main__"
- - decorator在被import的时候就会执行，而且只会执行一次，因为上述等价于 B = A(B)
+ - `@`这个只是语法糖，上述等价于 B = A(B) A已经被执行一次了
 
 ## 12 写出这个代码输出
 ``` python
@@ -242,7 +242,7 @@ l1: [3, [66, 44, 33, 22], (7, 8, 9), 100]
 
 l2: [3, [66, 44, 33, 22], (7, 8, 9, 10, 11)]
 
-这个是浅复制。l1,l2不是同一个list对象，所以他们自身的增改是不会影响对方的。但是，里面的元素就不一定了。`l1[1].remove(55)`因为l2,l1的第二个元素是list，他们的对象是一样的,mutable的+=,remove这样的操作是在自身身上进行，并不会返回新的对象。而第三个元素是一个`set` 是一个immutable，对自身的操作会返回一个新的对象,跟string一个道理。
+这个是浅复制。l1,l2不是同一个list对象，所以他们自身的增改是不会影响对方的。但是，里面的元素就不一定了。`l1[1].remove(55)`因为l2,l1的第二个元素是list，他们的对象是一样的,mutable的+=,remove这样的操作是在自身身上进行，并不会返回新的对象。而第三个元素是一个`tuple` 是一个immutable，对自身的操作会返回一个新的对象,跟string一个道理。
 
 浅复制，mutable和immutable修改自身元素特点
 
