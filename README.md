@@ -12,6 +12,7 @@
   - [9 简单说说类的创建过程](#9-简单说说类的创建过程)
   - [10 简单说说这个段代码(文件写入)](#10-简单说说这个段代码)
   - [11 简单说说这段代码（decorator）](#11-简单说说这段代码)
+  - [12 写出这个代码输出(copy array)](#12-写出这个代码输出)
 
 
 - [http](#http)
@@ -214,6 +215,32 @@ python test.py
  - `__name__` is a built-in variable which evaluate to the name of the current module。However, if a module is being run directly then `__name__` instead is set to the string "__main__"
  - decorator在被import的时候就会执行，而且只会执行一次，因为上述等价于 B = A(B)
 
+## 12 写出这个代码输出
+``` python
+l1 = [3, [66, 55, 44], (7, 8, 9)]
+l2 = list(l1)
+print(l1 == l2)
+print(l1 is l2)
+l1.append(100)
+l1[1].remove(55)
+print('l1:', l1)
+print('l2:', l2)
+l2[1] += [33, 22]
+l2[2] += (10, 11)
+print('l1:', l1)
+print('l2:', l2)
+```
+True
+
+False
+
+l1: [3, [66, 44], (7, 8, 9), 100]
+
+l2: [3, [66, 44], (7, 8, 9)]
+
+l1: [3, [66, 44, 33, 22], (7, 8, 9), 100]
+
+l2: [3, [66, 44, 33, 22], (7, 8, 9, 10, 11)]
 
 # HTTP
 ## 1 Get和Post的区别
