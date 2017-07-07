@@ -13,7 +13,8 @@
   - [10 简单说说这个段代码(文件写入)](#10-简单说说这个段代码)
   - [11 简单说说这段代码（decorator）](#11-简单说说这段代码)
   - [12 写出这个代码输出(copy array)](#12-写出这个代码输出)
-
+  - [13 AttributeDict](#13-AttributeDict)
+  
 
 - [http](#http)
   - [1 GET和POST的区别](#1-get和post的区别)
@@ -245,6 +246,31 @@ l2: [3, [66, 44, 33, 22], (7, 8, 9, 10, 11)]
 这个是浅复制。l1,l2不是同一个list对象，所以他们自身的增改是不会影响对方的。但是，里面的元素就不一定了。`l1[1].remove(55)`因为l2,l1的第二个元素是list，他们的对象是一样的,mutable的+=,remove这样的操作是在自身身上进行，并不会返回新的对象。而第三个元素是一个`tuple` 是一个immutable，对自身的操作会返回一个新的对象,跟string一个道理。
 
 浅复制，mutable和immutable修改自身元素特点
+
+## 13 AttributeDict
+```python
+class AttributeDict(dict):
+    __getattr__ = dict.__getitem__
+    __setattr__ = dict.__setitem__
+
+
+class AttributeDict2(dict):
+    def __getattr__(self, key):
+        try:
+            return self[key]
+        except KeyError:
+            raise AttributeError(key)
+
+    def __setattr__(self, key, value):
+        self[key] = value
+
+
+class AttributeDict3(dict):
+    def __init__(self, **kwargs):
+        super(AttributeDict3, self).__init__(**kwargs)
+        self.__dict__ = self
+
+```
 
 # HTTP
 ## 1 Get和Post的区别
