@@ -13,7 +13,7 @@
   - [10 简单说说这个段代码(文件写入)](#10-简单说说这个段代码)
   - [11 简单说说这段代码（decorator）](#11-简单说说这段代码)
   - [12 写出这个代码输出(copy array)](#12-写出这个代码输出)
-  - [13 AttributeDict](#13-AttributeDict)
+  - [13 AttributeDict](#13-attributedict)
   
 
 - [http](#http)
