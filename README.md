@@ -81,6 +81,15 @@ def my_xrange(start, stop=None, step=None):
         yield now
         now += step
 ```
+还可以使用步长的方式
+```python
+def my_range(start, stop, step):
+    total_step = int(stop - start) / step
+    i = 0
+    while total_step >= i:
+        yield start + step * i
+        i += 1
+```
 
 
 ## 3 LEGB
@@ -97,6 +106,9 @@ def outer():
     count = 100
     print(count)
 ```
+from dis import dis
+会分析反汇编
+
 ## 4 python unicode&str
 
 python的str就是字节数组，unicode才是我们认为的字符。str.decode('utf-8')变成字符，unicode.encode('gbk')就变成一个字节数组就是str。所以如果字符就应该使用unicode，如果读入一个文本文件，应该指定解码格式，不然读进来的是str，而不是unicode。所以我们操作的str之前要先decode一下
@@ -404,4 +416,9 @@ def filter_in_place(array, filter_):
 ```
 
 ## 2 快排
-pass
+```python
+def quick_sort(arr):
+    if arr == []: return []
+    return quick_sort([i for i in arr[1:] if i >= arr[0]]) + [arr[0]] + quick_sort([i for i in arr[1:] if i < arr[0]])
+
+```
