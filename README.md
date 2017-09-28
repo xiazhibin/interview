@@ -38,10 +38,12 @@
 
 - [redis](#redis)
   - [1 限制ip访问次数](#1-限制ip访问次数)
+  - [2 redis集群方式](#2-redis集群方式)
   
 - [算法](#算法)
   - [1 删除列表中特定元素](#1-remove-list)
-  
+  - [2 快排](#2-快排)
+  
 
 - [综合](#综合)
   - [1 短网址](#1-短网址)
@@ -364,6 +366,9 @@ WSGIHandler
 ## 1 限制ip访问次数
 例如10秒10次，用一个list保存访问的时间，当超过10的时候，拿出第一个跟现在时间对比，大于10，return。小于10，删掉第一个，push当前
 
+## 2 redis集群方式
+pass
+
 # 算法
 ## 1 remove list
 题目：在一个数组里面移除指定的value,并返回新的数组的长度,例如[1,23,4,None,None,3,45]删掉None ，返回5
@@ -397,3 +402,6 @@ def filter_in_place(array, filter_):
     del array[j:]
     return len(array)
 ```
+
+## 2 快排
+pass
