@@ -379,7 +379,11 @@ WSGIHandler
 例如10秒10次，用一个list保存访问的时间，当超过10的时候，拿出第一个跟现在时间对比，大于10，return。小于10，删掉第一个，push当前
 
 ## 2 redis集群方式
-pass
+ - 客户端分片 根据自己的规则对多台redis实例进行访问。可运维和可开发性差
+ - 代理分片 通过代理，客户端对redis服务器进行访问
+ - redis cluster 将所有Key映射到16384个Slot中，集群中每个Redis实例负责一部分
+ - Twemproxy 分布式中间件
+ - codis
 
 # 算法
 ## 1 remove list
