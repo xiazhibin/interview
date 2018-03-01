@@ -376,7 +376,7 @@ WSGIHandler
 
 # redis
 ## 1 限制ip访问次数
-例如10秒10次，用一个list保存访问的时间，当超过10的时候，拿出第一个跟现在时间对比，大于10，return。小于10，删掉第一个，push当前
+- [tokenbucket](https://github.com/xiazhibin/blog/blob/master/%E9%99%90%E6%B5%81.md)
 
 ## 2 redis集群方式
  - 客户端分片 根据自己的规则对多台redis实例进行访问。可运维和可开发性差
