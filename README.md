@@ -43,6 +43,7 @@
 - [算法](#算法)
   - [1 删除列表中特定元素](#1-remove-list)
   - [2 快排](#2-快排)
+  - [3 全排列](#3-全排列)
   
 
 - [综合](#综合)
@@ -426,3 +427,6 @@ def quick_sort(arr):
     return quick_sort([i for i in arr[1:] if i >= arr[0]]) + [arr[0]] + quick_sort([i for i in arr[1:] if i < arr[0]])
 
 ```
+## 3 全排列
+ - [全排列算法思路解析](http://blog.csdn.net/summerxiachen/article/details/60579623)
+ - [full_permutation.py](https://gist.github.com/xiazhibin/fe925e8bba637960df2ada5ac1f6c038)
