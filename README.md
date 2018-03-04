@@ -44,6 +44,7 @@
   - [1 删除列表中特定元素](#1-remove-list)
   - [2 快排](#2-快排)
   - [3 全排列](#3-全排列)
+  - [4 排列](#4-排列)
   
 
 - [综合](#综合)
@@ -430,3 +431,8 @@ def quick_sort(arr):
 ## 3 全排列
  - [全排列算法思路解析](http://blog.csdn.net/summerxiachen/article/details/60579623)
  - [full_permutation.py](https://gist.github.com/xiazhibin/fe925e8bba637960df2ada5ac1f6c038)
+
+## 4排列
+ - 取一个出来，剩下的n-1里面取m-1个，或者剩下的n-1取m个。
+ - [combie.py](https://gist.github.com/xiazhibin/5650acd8d00ba355df00e072362c3235)
+ - 有加速的算法：初始化m个1，n-m个0的数组，从左往右扫，遇到第一个"10"变成"01"，直到没有“10”
