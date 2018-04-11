@@ -40,6 +40,9 @@
   - [1 限制ip访问次数](#1-限制ip访问次数)
   - [2 redis集群方式](#2-redis集群方式)
   
+- [linux](#linux)
+   - [1 fork机制](#1-fork机制)
+  
 - [算法](#算法)
   - [1 删除列表中特定元素](#1-remove-list)
   - [2 快排](#2-快排)
@@ -437,3 +440,13 @@ def quick_sort(arr):
  - 取一个出来，剩下的n-1里面取m-1个，或者剩下的n-1取m个。
  - [combie.py](https://gist.github.com/xiazhibin/5650acd8d00ba355df00e072362c3235)
  - 有加速的算法：初始化m个1，n-m个0的数组，从左往右扫，遇到第一个"10"变成"01"，直到没有“10”
+
+# linux
+## 1 fork机制
+```python
+import os
+pid1 = os.fork()
+pid2 = os.fork()
+print pid1, pid2
+```
+如果一个输出是1001,1002 其他输出是什么
