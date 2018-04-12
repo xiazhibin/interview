@@ -448,3 +448,10 @@ pid2 = os.fork()
 print pid1, pid2
 ```
 如果一个输出是(1001,1002) 其他输出是什么(0,1003),(1001,0),(0,0)
+
+```python
+fork()&&fork()||fork()
+```
+1.一共产生几个进程  2.返回值为1的概率为多少？(5,3/5)
+
+[fork面试题](https://blog.csdn.net/chdhust/article/details/10579001)
