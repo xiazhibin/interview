@@ -48,6 +48,7 @@
   - [2 快排](#2-快排)
   - [3 全排列](#3-全排列)
   - [4 排列](#4-排列)
+  - [5 反转链表](#5-反转链表)
 
   
 
@@ -438,6 +439,22 @@ def quick_sort(arr):
 ## 4 排列
  - 取一个出来，剩下的n-1里面取m-1个，或者剩下的n-1取m个。
  - [combie.py](https://gist.github.com/xiazhibin/5650acd8d00ba355df00e072362c3235)
+
+## 5 反转链表
+```go
+func reverseLN(head *LinkNode) *LinkNode{
+	temp := head
+	var cur *LinkNode
+	head = nil
+	for ; temp != nil; {
+		cur = temp.next
+		temp.next = head
+		head = temp
+		temp = cur
+	}
+	return head
+}
+```
 
 # linux
 ## 1 fork机制
