@@ -50,7 +50,7 @@
   - [4 排列](#4-排列)
   - [5 反转链表](#5-反转链表)
   - [6 堆排序](#6-堆排序)
-
+  - [7 反转二叉树](#7-反转二叉树)
   
 
 - [综合](#综合)
@@ -499,6 +499,44 @@ func siftDown(arr []int, start, end int) {
 }
 ```
 
+## 7 反转二叉树
+思路：将node的左右节点反转即可（因为对于一个节点来说，反转了自己，自己的孙子也跟反转的了）
+```go
+func invert_tree2(node *tree) {
+	if node == nil {
+		return
+	}
+	if (node.left == nil) && (node.right == nil) {
+		return
+	}
+        node.left, node.right = node.right, node.left
+	invert_tree2(node.left)
+	invert_tree2(node.right)
+}
+```
+
+```go
+func invert_tree(root *tree) {
+	if root == nil {
+		return
+	}
+	stack := NewStack()
+	stack.Push(root)
+	for stack.len > 0 {
+		node, ok := stack.Pop()
+		if ok != nil {
+			return
+		}
+		node.left, node.right = node.right, node.left
+		if node.left != nil {
+			stack.Push(node.left)
+		}
+		if node.right != nil {
+			stack.Push(node.right)
+		}
+	}
+}
+```
 
 # linux
 ## 1 fork机制
