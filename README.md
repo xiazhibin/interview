@@ -49,6 +49,7 @@
   - [3 全排列](#3-全排列)
   - [4 排列](#4-排列)
   - [5 反转链表](#5-反转链表)
+  - [6 堆排序](#6-堆排序)
 
   
 
@@ -455,6 +456,49 @@ func reverseLN(head *LinkNode) *LinkNode{
 	return head
 }
 ```
+
+## 6 堆排序
+这个是满的二叉树所以有以下性质
+- 父节点i的左子节点在位置(2i+1)
+- 父节点i的右子节点在位置(2i+2)
+- 子节点i的父节点在位置floor((i-1)/2)
+
+步骤：
+- 创建最大值堆
+- 堆排序（移除位在第一个数据的根节点，放到末尾，并做最大堆调整的递归运算）
+
+```go
+func HeapSort(arr []int) {
+	l := len(arr)
+	m := l / 2
+	for i := m; i > -1; i-- {
+		siftDown(arr, i, l-1)
+	}
+
+	for i := l - 1; i > 0; i-- {
+		arr[i], arr[0] = arr[0], arr[i]
+		siftDown(arr, 0, i-1)
+	}
+}
+
+func siftDown(arr []int, start, end int) {
+	left := 2*start + 1
+	if left > end {
+		return
+	}
+	whichOne := left
+	right := 2*start + 2
+	if right <= end && arr[left] < arr[right] {
+		whichOne = right
+	}
+	if arr[start] > arr[whichOne]{
+		return
+	}
+	arr[whichOne], arr[start] = arr[start], arr[whichOne]
+	siftDown(arr, whichOne, end)
+}
+```
+
 
 # linux
 ## 1 fork机制
